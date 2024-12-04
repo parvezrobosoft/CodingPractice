@@ -1,5 +1,7 @@
 package Q51_SortArray;
 
+import java.util.*;
+
 public class ArrayOperation {
     public void sortDescending(int[] array) {
         int n = array.length;
@@ -121,10 +123,66 @@ public class ArrayOperation {
     }
 
 
-    public void getNonRepeatingElements(int[] array)
+    public List<Integer> getNonRepeatingElements(int[] array)
     {
+        List<Integer> nonRepeatingElements=new ArrayList<>();
+        Map<Integer,Integer> frequency=new HashMap<>();
 
+        for (int i:array)
+        {
+            if (frequency.containsKey(i))
+            {
+                frequency.put(i, frequency.get(i) + 1);
+            }else {
+                frequency.put(i, 1);
+            }
+        }
+
+        for (Map.Entry<Integer,Integer> set:frequency.entrySet())
+        {
+            if (set.getValue()==1)
+            {
+                nonRepeatingElements.add(set.getKey());
+
+            }
+        }
+
+        return nonRepeatingElements;
     }
+
+
+    public  void  printOddOrEvenPositionedNumbers(int[] array,int index)
+    {
+        int i=0;
+        if(index==1)
+            i=1;
+
+        for (int element:array)
+        {
+            if(i%2==1)
+                System.out.print(element+" ");
+
+            i++;
+        }
+    }
+
+
+    public int getNthLargestElementInArray(int[] array,int rank)
+    {
+        Set<Integer> unique =new HashSet<>();
+        for (int i:array)
+            unique.add(i);
+
+
+        Integer[] sortedArray=new Integer[unique.size()];
+        unique.toArray(sortedArray);
+        Arrays.sort(sortedArray,Collections.reverseOrder());
+
+        return sortedArray[rank-1];
+    }
+
+
+
 
 
 }

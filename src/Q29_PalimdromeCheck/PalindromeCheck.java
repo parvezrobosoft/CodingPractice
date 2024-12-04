@@ -2,11 +2,11 @@ package Q29_PalimdromeCheck;
 
 public class PalindromeCheck {
     public static void main(String[] args) {
-        String string="qfertreq";
+        String string="qfertrefq";
 
-       StringBuilder reversedString=new StringBuilder(string).reverse();
+       Palindrome palindrome=new Palindrome();
 
-       if(string.equals(reversedString.toString()))
+       if(palindrome.isPalindrome(string))
        {
            System.out.println("Given String is a palindrome");
        }
