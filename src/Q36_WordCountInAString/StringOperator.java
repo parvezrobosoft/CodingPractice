@@ -66,6 +66,40 @@ public class StringOperator {
         return length;
     }
 
+    public String removeNonAlphabets(String string)
+    {
+        StringBuilder result = new StringBuilder();
+
+        // Loop through each character in the input string
+        for (int i = 0; i < string.length(); i++) {
+
+            if (( string.charAt(i) >= 'A' &&  string.charAt(i) <= 'Z') || ( string.charAt(i) >= 'a' &&  string.charAt(i) <= 'z')) {
+                result.append(string.charAt(i));
+            }
+        }
+        return String.valueOf(result);
+    }
+
+    public void getCaseCount(String string)
+    {
+        int upperCaseCount = 0;
+        int lowerCaseCount = 0;
+
+        for (int i = 0; i < string.length(); i++) {
+            char c = string.charAt(i);
+
+            if (c >= 65 && c <= 90) {
+                upperCaseCount++;
+            }
+            else if (c >= 97 && c <= 122) {
+                lowerCaseCount++;
+            }
+        }
+
+        System.out.println("Number of uppercase letters: " + upperCaseCount);
+        System.out.println("Number of lowercase letters: " + lowerCaseCount);
+
+    }
 
 
 
