@@ -10,6 +10,7 @@ public class CharacterPercentageCount {
 
             int totalCount = 0;
 
+
             for (int i = 0; i < input.length(); i++) {
                 char ch = input.charAt(i);
                 totalCount++;
