@@ -1,0 +1,5 @@
+appended file
+read line
+count the number of words
+number of character
+number of lines

@@ -4,7 +4,7 @@ import Q36_WordCountInAString.StringOperator;
 
 public class StringLengthWithoutMethod {
     public static void main(String[] args) {
-        String string="helllooo";
+        String string=" helllooo ";
 
         StringOperator operator=new StringOperator();
         int length=operator.getLength(string);

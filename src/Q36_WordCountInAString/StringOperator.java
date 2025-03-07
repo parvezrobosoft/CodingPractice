@@ -45,7 +45,6 @@ public class StringOperator {
     {
         int middleIndex = string.length() / 2;
 
-        // Insert the word in the middle of the original string
         String result = string.substring(0, middleIndex) + insert + string.substring(middleIndex);
 
         return result;
@@ -70,7 +69,6 @@ public class StringOperator {
     {
         StringBuilder result = new StringBuilder();
 
-        // Loop through each character in the input string
         for (int i = 0; i < string.length(); i++) {
 
             if (( string.charAt(i) >= 'A' &&  string.charAt(i) <= 'Z') || ( string.charAt(i) >= 'a' &&  string.charAt(i) <= 'z')) {
@@ -101,6 +99,18 @@ public class StringOperator {
 
     }
 
+    public boolean isRotation(String string1, String string2) {
+
+
+        for (int i = 0; i < string1.length(); i++) {
+
+            if ((string1.substring(i) + string1.substring(0, i)).equals(string2)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 
 
 
